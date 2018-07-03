@@ -1,0 +1,14 @@
+<input id="start" type="date"></input>
+<div id="dtd"></div>
+<script>
+function datediff(first, second) {
+    return Math.round((second-first)/(1000*60*60*24));
+}
+
+function updateDate() {
+  localStorage.setItem("dtdStart", start.value);
+  document.getElementById("dtd").innerHTML = datediff(new Date(start.value), new Date());
+}
+start.onchange = updateDate();
+document.getElementById("dtd").innerHTML = datediff(new Date(localStorage.getItem("dtdStart")), new Date());
+</script>
