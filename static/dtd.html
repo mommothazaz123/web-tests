@@ -1,4 +1,4 @@
-<input id="start" type="date"></input>
+<input id="start" type="date" onchange="updateDate()"></input>
 <div id="dtd"></div>
 <script>
 function datediff(first, second) {
@@ -11,5 +11,4 @@ function updateDate() {
 }
 document.getElementById("dtd").innerHTML = datediff(new Date(localStorage.getItem("dtdStart")), new Date());
 start.defaultValue = localStorage.getItem("dtdStart");
-start.onChange = updateDate();
 </script>
