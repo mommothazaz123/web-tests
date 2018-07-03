@@ -9,6 +9,7 @@ function updateDate() {
   localStorage.setItem("dtdStart", start.value);
   document.getElementById("dtd").innerHTML = datediff(new Date(start.value), new Date());
 }
-start.onchange = updateDate();
 document.getElementById("dtd").innerHTML = datediff(new Date(localStorage.getItem("dtdStart")), new Date());
+start.defaultValue = localStorage.getItem("dtdStart");
+start.onChange = updateDate();
 </script>
